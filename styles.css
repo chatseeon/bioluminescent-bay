@@ -1,0 +1,43 @@
+/* 全局样式 */
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #001f3f, #0074d9, #7fdbff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* 动态渐变动画 */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 荧光点样式 */
+.light {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(127, 219, 255, 0.8); /* 青绿色荧光 */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(127, 219, 255, 0.8);
+    animation: float 6s infinite ease-in-out, glow 2s infinite alternate;
+}
+
+/* 浮动动画 */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/* 闪烁动画 */
+@keyframes glow {
+    0% { opacity: 0.5; box-shadow: 0 0 5px rgba(127, 219, 255, 0.5); }
+    100% { opacity: 1; box-shadow: 0 0 15px rgba(127, 219, 255, 1); }
+}
